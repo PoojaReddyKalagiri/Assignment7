@@ -6,7 +6,7 @@ public class Char_count{
         for(char c='a';c<='z';c++){
             characterCount.put(c,0);
         }
-        File file = new File("/home/zadmin/file_char_count"); // input file
+        File file = new File(args[0]); // input file
         FileWriter fw = new FileWriter("/home/zadmin/outputfile.txt"); // output file
         Scanner sc= new Scanner(file);
         char[] chars = sc.nextLine().toLowerCase().toCharArray();
