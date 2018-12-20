@@ -9,11 +9,13 @@ public class Char_count{
         File file = new File(args[0]); // input file
         FileWriter fw = new FileWriter("/home/zadmin/outputfile.txt"); // output file
         Scanner sc= new Scanner(file);
-        char[] chars = sc.nextLine().toLowerCase().toCharArray();
-        for (Character ch : chars) {
+        while(sc.hasnextLine()){
+          char[] chars = sc.nextLine().toLowerCase().toCharArray();
+          for (Character ch : chars) {
             if(Character.isLetter(ch)) {
                 characterCount.put(ch, characterCount.get(ch) + 1);
             }
+          }
         }
         for (Map.Entry<Character, Integer> entry : characterCount.entrySet()) {
             String s=entry.getKey()+" : "+ entry.getValue() + "\n";
